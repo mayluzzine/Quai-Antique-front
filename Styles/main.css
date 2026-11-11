@@ -1,0 +1,28 @@
+/* Police */
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* font-family: "Hind Murai", serif; */
+
+/* Personnalisation des couleurs */
+
+:root {
+--primary: #906427;
+--secondary: #B6AC97;
+--black: #070505;
+--dark: #392C1E;
+}
+
+/* Forcer le style des boutons */
+
+.btn-primary {
+background-color: var(--primary);
+border-color: var(--primary);
+}
+
+.btn-primary:hover {
+background-color: var(--dark);
+border-color: var(--dark);
+}
