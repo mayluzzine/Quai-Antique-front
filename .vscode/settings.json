@@ -1,0 +1,18 @@
+{
+    "customFileOrder.rules": {
+        ".": {
+            "order": [
+                "index.html",
+                "Router",
+                "readme.md"
+            ]
+        },
+        "js": {
+            "order": [
+                "route.js",
+                "allroutes.js",
+                "router.js"
+            ]
+        }
+    }
+}
