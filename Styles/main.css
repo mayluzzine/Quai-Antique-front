@@ -26,3 +26,10 @@ border-color: var(--primary);
 background-color: var(--dark);
 border-color: var(--dark);
 }
+
+/* Forcer le style de la Navbar */
+
+.navbar {
+--bs-navbar-bg: #392C1E !important;
+background-color: #392C1E !important;
+}
