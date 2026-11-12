@@ -4,7 +4,10 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-/* font-family: "Hind Murai", serif; */
+p {
+font-family: 'Hind Madurai', serif;
+font-size: 1.2rem;
+}
 
 /* Personnalisation des couleurs */
 
@@ -32,4 +35,37 @@ border-color: var(--dark);
 .navbar {
 --bs-navbar-bg: #392C1E !important;
 background-color: #392C1E !important;
+}
+
+/* Forcer le style du footer */
+
+.footer {
+background-color: #392C1E !important;
+padding: 15px;
+}
+
+.footer h3 {
+    color: var(--primary) !important;
+}
+
+.footer p {
+    font-family: 'Hind Madurai', serif !important;
+    font-size: 1.2rem !important;
+}
+
+/* Forcer le footer en pied de page */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+main {
+    margin-bottom: 250px; /* Hauteur du footer */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
