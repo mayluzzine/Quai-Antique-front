@@ -112,4 +112,43 @@ footer {
     }
 }
 
+/* Galerie */
 
+.image-card {
+    position: relative;
+    overflow: hidden; /* Évite que l'image ne dépasse si elle a des coins arrondis */
+}
+
+/* Style de l'image de la galerie */
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+/* Style du titre caché par défaut */
+.image-card .titre-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #ffffff; /* Texte en blanc pour contraster avec le fond assombri */
+    font-family: "Montserrat", sans-serif; /* Utilise bien ta police */
+    font-weight: 700;
+    z-index: 2; /* S'assure que le texte passe bien au-dessus de l'image */
+    text-align: center;
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* Effet au survol */
+.image-card:hover img {
+    filter: brightness(0.3); /* Assombrit l'image */
+}
+
+.image-card:hover .titre-image {
+    opacity: 1; /* Fait apparaître le titre au centre */
+}
