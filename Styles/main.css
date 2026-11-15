@@ -1,47 +1,58 @@
-/* Police */
+/* 1. VARIABLES GLOBALES & BOOTSTRAP OVERRIDE */
 
+:root {
+    /* Couleurs personnalisées */
+    --primary: #906427;
+    --secondary: #B6AC97;
+    --black: #070505;
+    --dark: #392C1E;
+
+    /* On force Bootstrap les utiliser partout */
+    --bs-primary: #906427;
+    --bs-primary-rgb: 144, 100, 39;
+    --bs-secondary: #B6AC97;
+    --bs-black: #070505;
+    --bs-dark: #392C1E;
+}
+
+/* 2. TYPOGRAPHIE GLOBALE (Appliquée partout) */
 body {
     font-family: "Montserrat", sans-serif;
 }
 
+/* Forcer Montserrat sur tous les titres pour toutes les pages */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif !important;
+}
+
 p {
-font-family: 'Hind Madurai', serif;
-font-size: 1.2rem;
+    font-family: 'Hind Madurai', serif;
+    font-size: 1.2rem;
 }
 
-/* Personnalisation des couleurs */
+/* 3. COMPOSANTS ET ELEMENTS GLOBAUX */
 
-:root {
---primary: #906427;
---secondary: #B6AC97;
---black: #070505;
---dark: #392C1E;
-}
-
-/* Forcer le style des boutons */
-
+/* Boutons principaux */
 .btn-primary {
-background-color: var(--primary);
-border-color: var(--primary);
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
 
 .btn-primary:hover {
-background-color: var(--dark);
-border-color: var(--dark);
+    background-color: var(--dark);
+    border-color: var(--dark);
 }
 
-/* Forcer le style de la Navbar */
-
+/* Navbar */
 .navbar {
---bs-navbar-bg: #392C1E !important;
-background-color: #392C1E !important;
+    --bs-navbar-bg: #392C1E !important;
+    background-color: #392C1E !important;
 }
 
-/* Forcer le style du footer */
-
+/* Footer */
 .footer {
-background-color: #392C1E !important;
-padding: 15px;
+    background-color: #392C1E !important;
+    padding: 15px;
 }
 
 .footer h3 {
@@ -53,8 +64,7 @@ padding: 15px;
     font-size: 1.2rem !important;
 }
 
-/* Forcer le footer en pied de page */
-
+/* Layout pied de page fixe */
 html {
     position: relative;
     min-height: 100%;
@@ -69,3 +79,37 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* 4. SECTIONS SPÉCIFIQUES */
+
+/* Hero */
+
+.hero-scene {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/hero.png);
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.3);
+        z-index: 1;
+    }
+
+    .hero-scene-content {
+        position: relative;
+        z-index: 2;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
