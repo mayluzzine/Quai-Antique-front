@@ -30,6 +30,22 @@ p {
     font-size: 1.2rem;
 }
 
+/* Forcer la couleur primaire dans tous les liens */
+a {
+    color: var(--primary) !important;
+}
+
+/* Forcer la couleur primaire dans les labels de formulaire */
+.form-label {
+    color: var(--primary) !important;
+}
+
+/* Atténuer la couleur des placeholders dans les champs de formulaire */
+input::placeholder {
+    color: var(--secondary) !important;
+    opacity: 0.5 !important; 
+}
+
 /* 3. COMPOSANTS ET ELEMENTS GLOBAUX */
 
 /* Boutons principaux */
@@ -71,7 +87,7 @@ html {
 }
 
 main {
-    margin-bottom: 250px; /* Hauteur du footer */
+    margin-bottom:270px; /* Hauteur du footer */
 }
 
 footer {
