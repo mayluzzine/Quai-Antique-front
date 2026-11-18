@@ -52,6 +52,7 @@ input::placeholder {
 .btn-primary {
     background-color: var(--primary);
     border-color: var(--primary);
+    color:#ffffff
 }
 
 .btn-primary:hover {
@@ -152,7 +153,7 @@ footer {
     opacity: 0;
     transition: opacity 0.3s ease;
     color: #ffffff; /* Texte en blanc pour contraster avec le fond assombri */
-    font-family: "Montserrat", sans-serif; /* Utilise bien ta police */
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     z-index: 2; /* S'assure que le texte passe bien au-dessus de l'image */
     text-align: center;
@@ -160,16 +161,32 @@ footer {
     padding: 0 15px;
 }
 
-/* Effet au survol */
+/* Conteneur des boutons d'action */
+.action-image-buttons {
+    position: absolute;
+    top: calc(1rem + 10px); /* 1rem correspond au p-3 de Bootstrap + 10px pour descendre sur l'image */
+    left: calc(1rem + 10px);
+    right: calc(1rem + 10px);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3; /* S'assure qu'ils sont au-dessus de tout */
+}
+
+/* Effet au survol global de la carte */
 .image-card:hover img {
     filter: brightness(0.3); /* Assombrit l'image */
 }
 
-.image-card:hover .titre-image {
-    opacity: 1; /* Fait apparaître le titre au centre */
+/* Le :hover pour le titre et les boutons */
+.image-card:hover .titre-image, 
+.image-card:hover .action-image-buttons {
+    opacity: 1; /* Fait apparaître le texte et les boutons au survol */
 }
 
-/* Carte */
+
+/* La carte */
 
 .categorie h2 {
     color: var(--primary) !important;

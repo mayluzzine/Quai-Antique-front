@@ -1,37 +1,134 @@
 <div class="hero-scene text-center text-white">
-    <div class="hero-scene-content">
+        <div class="hero-scene-content">
         <h1>Galerie</h1>
-    </div>
+        </div>
 </div>
 
-<div class="row row-cols-2 row-cols-lg-3 m-2">
+<div class="text-center">
+<button class="btn btn-primary m-4" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal">
+Ajouter une photo
+</button>
+</div>
+
+<div class="row row-cols-2 row-cols-lg-3">
+        <!-- Carte 1 -->
         <div class="col p-3 image-card">
-                <img src="../images/food.png" class="rounded w-100"/>
+                <img src="../images/food.png" class="rounded w-100" alt="Assortiment de plats à partager"/>
                 <p class="titre-image"> Des plats à partager </p>
+                <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier"><i class="bi bi-pencil"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer"><i class="bi bi-trash"></i></button>
+                </div>
         </div>
 
+        <!-- Carte 2 -->
         <div class="col p-3 image-card">
-                <img src="../images/cuisine.png" class="rounded w-100"/>
+                <img src="../images/cuisine.png" class="rounded w-100" alt="Préparation d'une cuisine authentique"/>
                 <p class="titre-image"> Une cuisine authentique </p>
+                <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier"><i class="bi bi-pencil"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer"><i class="bi bi-trash"></i></button>
+                </div>
         </div>
 
+        <!-- Carte 3 -->
         <div class="col p-3 image-card">
-                <img src="../images/food2.png" class="rounded w-100"/>
+                <img src="../images/food2.png" class="rounded w-100" alt="Présentation de plats régionaux"/>
                 <p class="titre-image"> Des plats régionaux</p>
+                <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier"><i class="bi bi-pencil"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer"><i class="bi bi-trash"></i></button>
+                </div>
         </div>
 
+        <!-- Carte 4 -->
         <div class="col p-3 image-card">
-                <img src="../images/terrasse.png" class="rounded w-100"/>
+                <img src="../images/terrasse.png" class="rounded w-100" alt="Vue d'une terrasse conviviale"/>
                 <p class="titre-image"> Une terrasse conviviale </p>
+                <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier"><i class="bi bi-pencil"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer"><i class="bi bi-trash"></i></button>
+                </div>
         </div>
 
+        <!-- Carte 5 -->
         <div class="col p-3 image-card">
-                <img src="../images/boissons.png" class="rounded w-100"/>
+                <img src="../images/boissons.png" class="rounded w-100" alt="Sélection de boissons variées"/>
                 <p class="titre-image"> Un large choix de boissons</p>
+                <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier"><i class="bi bi-pencil"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer"><i class="bi bi-trash"></i></button>
+                </div>
         </div>
 
+        <!-- Carte 6 -->
         <div class="col p-3 image-card">
-                <img src="../images/table.png" class="rounded w-100"/>
+                <img src="../images/table.png" class="rounded w-100" alt="Table dressée dans une ambiance chaleureuse"/>
                 <p class="titre-image"> Une ambiance chaleureuse </p>
+                <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier"><i class="bi bi-pencil"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer"><i class="bi bi-trash"></i></button>
+                </div>
+        </div>
+</div>
+
+<div class="text-center">
+        <button href="/reservation" class="btn btn-primary m-4">Réserver</button>
+</div>
+
+<!-- Modal édition -->
+<div class="modal fade" id="EditionPhotoModal" tabindex="-1" aria-labelledby="EditionPhotoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+                <h2 class="modal-title fs-5" id="EditionPhotoModalLabel">Editer une photo</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+        
+                <form>
+                        <div class="mb-3">
+                                <label for="NamePhotoInput" class="form-label">Titre</label>
+                                <input type="text" class="form-control" id="NamePhotoInput" placeholder="Lasagnes" name="NamePhoto">
+                        </div>
+                        <div class="mb-3">
+                                <label for="ImageInput" class="form-label">Image</label>
+                                <input type="file" class="form-control" id="ImageInput" name="Image">
+                        </div>
+                        <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </div>
+        
+                </form>
+        </div>
+        </div>
+        </div>
+</div>
+
+<!-- Modal suppression -->
+<div class="modal fade" id="DeletePhotoModal" tabindex="-1" aria-labelledby="DeletePhotoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+                <h2 class="modal-title fs-5" id="DeletePhotoModalLabel">Supprimer une photo</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+        
+                <form>
+                        <div class="mb-3">
+                                <p>Titre</p>
+                                <img src="../images/food.png" class="rounded w-100" alt="Assortiment de plats à partager"/>
+                        </div>
+                        <div class="text-center">
+                                <button type="button" class="btn btn-danger">Supprimer</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        </div>
+        
+                </form>
+        </div>
+        </div>
         </div>
 </div>
