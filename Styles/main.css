@@ -48,6 +48,8 @@ input::placeholder {
 
 /* 3. COMPOSANTS ET ELEMENTS GLOBAUX */
 
+/* Boutons primaires */
+
 /* État normal, focus et actif */
 .btn-primary,
 .btn-primary:focus,
@@ -72,6 +74,27 @@ box-shadow: none !important;
 --bs-btn-hover-border-color: var(--dark);
 background-color: var(--dark) !important;
 border-color: var(--dark) !important;
+color: #ffffff !important;
+}
+
+/* Bouton pour afficher/masquer le mot de passe */
+
+/* État normal */
+#togglePassword.btn-outline-secondary {
+--bs-btn-color: var(--primary);
+--bs-btn-border-color: var(--primary);
+color: #ffffff !important;
+border-color: var(--primary) !important;
+background-color: var(--primary) !important;
+}
+
+/* Au survol */
+#togglePassword.btn-outline-secondary:hover {
+--bs-btn-hover-bg: var(--secondary);
+--bs-btn-hover-border-color: var(--secondary);
+--bs-btn-hover-color: #ffffff;
+background-color: var(--secondary) !important;
+border-color: var(--secondary) !important;
 color: #ffffff !important;
 }
 
