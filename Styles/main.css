@@ -48,16 +48,31 @@ input::placeholder {
 
 /* 3. COMPOSANTS ET ELEMENTS GLOBAUX */
 
-/* Boutons principaux */
-.btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    color:#ffffff
+/* État normal, focus et actif */
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:focus-visible,
+.btn-primary.active,
+.btn-primary:first-child:active {
+--bs-btn-bg: var(--primary);
+--bs-btn-border-color: var(--primary);
+--bs-btn-active-bg: var(--dark);
+--bs-btn-active-border-color: var(--dark);
+background-color: var(--primary) !important;
+border-color: var(--primary) !important;
+color: #ffffff !important;
+box-shadow: none !important;
 }
 
-.btn-primary:hover {
-    background-color: var(--dark);
-    border-color: var(--dark);
+/* État survol (et appui maintenu) */
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:hover:focus-visible {
+--bs-btn-hover-bg: var(--dark);
+--bs-btn-hover-border-color: var(--dark);
+background-color: var(--dark) !important;
+border-color: var(--dark) !important;
+color: #ffffff !important;
 }
 
 /* Navbar */
