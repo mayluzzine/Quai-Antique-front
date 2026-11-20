@@ -26,9 +26,10 @@ function eraseCookie(name) {
     document.cookie = name + '=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT; SameSite=Strict;';
 }
 
-// stocker les token en cookie
+// stocker les token en cookie et gérer les rôles
 
 const tokenCookieName = "accesstoken";
+const roleCookieName = "role";
 
 function setToken(token){
     setCookie(tokenCookieName, token, 7);
@@ -38,12 +39,72 @@ function getToken(){
     return getCookie(tokenCookieName);
 }
 
+function getRole() {
+    return getCookie(roleCookieName);
+}
+
+// Fonction indiquant si on est connecté ou non 
+function isConnected() {
+    return getToken() != null;
+}
+
+
 // Se déconnecter 
-const signoutBtn = document.getElementById(signout-btn);
-signoutBtn.addEventListener("click", signout)
+const signoutBtn = document.getElementById("signout-btn");
+if (signoutBtn) {
+    signoutBtn.addEventListener("click", signout);
+}
 
 // la fonction déconnexion, qui va effacer le cookie
 function signout(){
     eraseCookie(tokenCookieName);
+    eraseCookie(roleCookieName);
     window.location.reload();
 }
+
+// CREATION DES QUATRE ROLES 
+
+// l'utilisateur déconnecté = disconnected
+
+// l'utilisateur connecté admin ou client = connected
+
+// l'utulisateur admin = admin
+
+// l'utilisateur client = client 
+
+// Fonction pour afficher et masquer les éléments selon les rôles
+function showAndHideElementsForRoles() {
+    const userConnected = isConnected();
+    const role = getRole();  
+
+    let allElementsToEdit = document.querySelectorAll("[data-show]");
+
+    allElementsToEdit.forEach(element => {
+        let shouldShow = false;
+
+        switch (element.dataset.show) {
+            case 'disconnected':
+                shouldShow = !userConnected;
+                break;
+
+            case 'connected':
+                shouldShow = userConnected;
+                break;
+
+            case 'admin':
+                shouldShow = userConnected && role === "admin";
+                break;
+
+            case 'client':
+                shouldShow = userConnected && role === "client";
+                break;
+
+            default:
+                shouldShow = true;
+        }
+
+        element.classList.toggle("d-none", !shouldShow);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", showAndHideElementsForRoles);
