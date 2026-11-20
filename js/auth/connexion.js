@@ -3,10 +3,10 @@ const mailInput = document.getElementById("EmailInput");
 const passwordInput = document.getElementById("PasswordInput");
 
 // on récupère le bouton de connexion
-const btnSingin = document.getElementById("btnSignin");
+const btnSignin = document.getElementById("btnSignin");
 
 // on ajoute un event listener sur le bouton de connexion
-btnSingin.addEventListener("click", checkCredentials);
+btnSignin.addEventListener("click", checkCredentials);
 
 // on crée la fonction pour vérifier les credentials
 function checkCredentials(event){

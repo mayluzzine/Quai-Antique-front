@@ -104,6 +104,22 @@ color: #ffffff !important;
     background-color: #392C1E !important;
 }
 
+/* Nav-link */
+
+.navbar a.nav-link,
+.navbar a.navbar-brand {
+    color: #ffffff !important;
+}
+
+.navbar a.nav-link:hover,
+.navbar a.nav-link:focus,
+.navbar a.nav-link.active,
+.navbar a.navbar-brand:hover,
+.navbar a.navbar-brand:focus {
+    color: #ffffff !important;
+    opacity: 0.85;
+}
+
 /* Footer */
 .footer {
     background-color: #392C1E !important;

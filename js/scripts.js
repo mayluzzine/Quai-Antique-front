@@ -37,3 +37,13 @@ function setToken(token){
 function getToken(){
     return getCookie(tokenCookieName);
 }
+
+// Se déconnecter 
+const signoutBtn = document.getElementById(signout-btn);
+signoutBtn.addEventListener("click", signout)
+
+// la fonction déconnexion, qui va effacer le cookie
+function signout(){
+    eraseCookie(tokenCookieName);
+    window.location.reload();
+}
