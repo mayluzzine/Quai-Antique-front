@@ -44,11 +44,11 @@ if (actualRoute.pathJS != "") {
 
   // Changement du titre de la page
 document.title = actualRoute.title + " - " + websiteName;
+showAndHideElementsForRoles();
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)
 const routeEvent = (event) => {
-event = event || window.event;
 event.preventDefault();
   // Mise à jour de l'URL dans l'historique du navigateur
 window.history.pushState({}, "", event.target.href);
